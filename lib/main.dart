@@ -1,3 +1,4 @@
+import 'package:bookingapp/data/src/img_string.dart';
 import 'package:bookingapp/presentation/widget/primary_button.dart';
 import 'package:bookingapp/presentation/widget/secondary_button.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,8 @@ class Main extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Image.asset(ImgString.standing),
+              const SizedBox(height: 12),
               const Text("Test App"),
               const SizedBox(height: 12),
               PrimaryButton(
