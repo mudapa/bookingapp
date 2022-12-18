@@ -1,35 +1,37 @@
 import 'package:bookingapp/config/config.dart';
 import 'package:flutter/material.dart';
 
-class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({
+class SecondaryButton extends StatelessWidget {
+  const SecondaryButton({
     super.key,
-    this.type = PrimaryButtonType.type1,
+    this.type = SecondaryButtonType.type1,
     required this.onPressed,
     required this.text,
   });
-  final PrimaryButtonType type;
+  final SecondaryButtonType type;
   final VoidCallback? onPressed;
   final String text;
 
   @override
   Widget build(BuildContext context) {
-    return type == PrimaryButtonType.type1
+    return type == SecondaryButtonType.type1
         ? _type1()
-        : type == PrimaryButtonType.type2
+        : type == SecondaryButtonType.type2
             ? _type2()
             : _type3();
   }
 
   Widget _type1() {
-    return ElevatedButton(
+    return OutlinedButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
+      style: OutlinedButton.styleFrom(
         padding: const EdgeInsets.symmetric(
           horizontal: 8,
           vertical: 4,
         ),
-        backgroundColor: AppColor.ink01,
+        side: const BorderSide(
+          color: AppColor.ink01,
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),
@@ -37,21 +39,23 @@ class PrimaryButton extends StatelessWidget {
       child: Text(
         text,
         style: AppFont.buttonSmall.copyWith(
-          color: AppColor.ink06,
+          color: AppColor.ink01,
         ),
       ),
     );
   }
 
   Widget _type2() {
-    return ElevatedButton(
+    return OutlinedButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
+      style: OutlinedButton.styleFrom(
         padding: const EdgeInsets.symmetric(
           horizontal: 12,
           vertical: 8,
         ),
-        backgroundColor: AppColor.ink01,
+        side: const BorderSide(
+          color: AppColor.ink01,
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),
@@ -59,21 +63,23 @@ class PrimaryButton extends StatelessWidget {
       child: Text(
         text,
         style: AppFont.buttonMedium.copyWith(
-          color: AppColor.ink06,
+          color: AppColor.ink01,
         ),
       ),
     );
   }
 
   Widget _type3() {
-    return ElevatedButton(
+    return OutlinedButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
+      style: OutlinedButton.styleFrom(
         padding: const EdgeInsets.symmetric(
           horizontal: 16,
           vertical: 8,
         ),
-        backgroundColor: AppColor.ink01,
+        side: const BorderSide(
+          color: AppColor.ink01,
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),
@@ -81,14 +87,14 @@ class PrimaryButton extends StatelessWidget {
       child: Text(
         text,
         style: AppFont.buttonLarge.copyWith(
-          color: AppColor.ink06,
+          color: AppColor.ink01,
         ),
       ),
     );
   }
 }
 
-enum PrimaryButtonType {
+enum SecondaryButtonType {
   type1,
   type2,
   type3,

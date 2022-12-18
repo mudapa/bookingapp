@@ -1,3 +1,5 @@
+import 'package:bookingapp/presentation/widget/primary_button.dart';
+import 'package:bookingapp/presentation/widget/secondary_button.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const Main());
@@ -7,10 +9,29 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Text('Test App'),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text("Test App"),
+              const SizedBox(height: 12),
+              PrimaryButton(
+                onPressed: () {},
+                text: "Download",
+                type: PrimaryButtonType.type3,
+              ),
+              const SizedBox(height: 6),
+              SecondaryButton(
+                onPressed: () {},
+                text: "Download",
+                type: SecondaryButtonType.type3,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
