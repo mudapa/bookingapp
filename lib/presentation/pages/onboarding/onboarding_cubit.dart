@@ -28,4 +28,8 @@ class OnboardingCubit extends Cubit<OnboardingState> {
       );
     }
   }
+
+  void skip() {
+    //TODO: implement skip
+  }
 }

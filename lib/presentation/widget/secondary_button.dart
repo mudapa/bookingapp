@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 class SecondaryButton extends StatelessWidget {
   const SecondaryButton({
     super.key,
-    this.type = SecondaryButtonType.type1,
+    this.type = SecondaryButtonType.type3,
     required this.onPressed,
     required this.text,
+    this.width = 110.0,
   });
   final SecondaryButtonType type;
   final VoidCallback? onPressed;
   final String text;
-
+  final double width;
   @override
   Widget build(BuildContext context) {
     return type == SecondaryButtonType.type1
@@ -22,72 +23,81 @@ class SecondaryButton extends StatelessWidget {
   }
 
   Widget _type1() {
-    return OutlinedButton(
-      onPressed: onPressed,
-      style: OutlinedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 8,
-          vertical: 4,
+    return SizedBox(
+      width: width,
+      child: OutlinedButton(
+        onPressed: onPressed,
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 4,
+          ),
+          side: const BorderSide(
+            color: AppColor.ink01,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
         ),
-        side: const BorderSide(
-          color: AppColor.ink01,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
-        ),
-      ),
-      child: Text(
-        text,
-        style: AppFont.buttonSmall.copyWith(
-          color: AppColor.ink01,
+        child: Text(
+          text,
+          style: AppFont.buttonSmall.copyWith(
+            color: AppColor.ink01,
+          ),
         ),
       ),
     );
   }
 
   Widget _type2() {
-    return OutlinedButton(
-      onPressed: onPressed,
-      style: OutlinedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 12,
-          vertical: 8,
+    return SizedBox(
+      width: width,
+      child: OutlinedButton(
+        onPressed: onPressed,
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 12,
+            vertical: 8,
+          ),
+          side: const BorderSide(
+            color: AppColor.ink01,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
         ),
-        side: const BorderSide(
-          color: AppColor.ink01,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
-        ),
-      ),
-      child: Text(
-        text,
-        style: AppFont.buttonMedium.copyWith(
-          color: AppColor.ink01,
+        child: Text(
+          text,
+          style: AppFont.buttonMedium.copyWith(
+            color: AppColor.ink01,
+          ),
         ),
       ),
     );
   }
 
   Widget _type3() {
-    return OutlinedButton(
-      onPressed: onPressed,
-      style: OutlinedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 8,
+    return SizedBox(
+      width: width,
+      child: OutlinedButton(
+        onPressed: onPressed,
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
+          ),
+          side: const BorderSide(
+            color: AppColor.ink01,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
         ),
-        side: const BorderSide(
-          color: AppColor.ink01,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
-        ),
-      ),
-      child: Text(
-        text,
-        style: AppFont.buttonLarge.copyWith(
-          color: AppColor.ink01,
+        child: Text(
+          text,
+          style: AppFont.buttonLarge.copyWith(
+            color: AppColor.ink01,
+          ),
         ),
       ),
     );

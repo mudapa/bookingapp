@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'onboarding_cubit.dart';
-import 'onboarding_state.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -18,13 +17,24 @@ class OnboardingPage extends StatelessWidget {
 
   Widget _buildPage(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: const [
-          OnboardingImage(),
-          OnboardingTitle(),
-          OnboardingIndicator(),
-          OnboardingButton(),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(
+          top: 16,
+          left: 16,
+          right: 16,
+        ),
+        child: Column(
+          children: const [
+            OnboardingImage(),
+            SizedBox(height: 32),
+            OnboardingTitle(),
+            SizedBox(height: 45),
+            OnboardingIndicator(),
+            SizedBox(height: 53),
+            OnboardingButton(),
+            SizedBox(height: 83),
+          ],
+        ),
       ),
     );
   }
