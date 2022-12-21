@@ -1,5 +1,6 @@
 import 'package:bookingapp/config/config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SecondaryButton extends StatelessWidget {
   const SecondaryButton({
@@ -7,7 +8,7 @@ class SecondaryButton extends StatelessWidget {
     this.type = SecondaryButtonType.type3,
     required this.onPressed,
     required this.text,
-    this.width = 110.0,
+    this.width = 80,
   });
   final SecondaryButtonType type;
   final VoidCallback? onPressed;
@@ -24,7 +25,7 @@ class SecondaryButton extends StatelessWidget {
 
   Widget _type1() {
     return SizedBox(
-      width: width,
+      width: width.w,
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
@@ -51,7 +52,7 @@ class SecondaryButton extends StatelessWidget {
 
   Widget _type2() {
     return SizedBox(
-      width: width,
+      width: width.w,
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
@@ -78,7 +79,7 @@ class SecondaryButton extends StatelessWidget {
 
   Widget _type3() {
     return SizedBox(
-      width: width,
+      width: width.w,
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
